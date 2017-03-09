@@ -1,0 +1,181 @@
+\documentclass[onecollarge,runningheads] %{svjour2}
+\smartqed  % flush right qed marks, e.g. at end of proof
+%\usepackage{graphicx}
+%\journalname{Journal of Biological Physics}
+\begin{document}
+\title{Insert your title here%\thanks{Grants or other notes
+%about the article that should go on the front page should be
+%placed here. General acknowledgments should be placed at the end of the article.}
+}
+\subtitle{Do you have a subtitle?\\ If so, write it here}
+%\titlerunning{Short form of title}        % if too long for running head
+\author{Jaime Gomez-Ramirez \and Bryan Strange
+        %etc.
+}
+%\authorrunning{Short form of author list} % if too long for running head
+\institute{Fundación Reina Sofia \at
+			  Centre for Research in Neurodegenarative Diseases\\	              
+              Valderrebollo, 5 Madrid, Spain \\
+              \email{jgomez@fundacioncien.es}           %  \\
+%             \emph{Present address:} of F. Author  %  if needed
+           \and
+           S. Author \at
+              second address
+}
+\date{Received: date / Accepted: date}
+% The correct dates will be entered by the editor
+\maketitle
+
+\section*{Introduction}
+Networks or graphs are efficient mathematical representations of complex systems.  Graph theory provides the mathematical framework to study the structure and function of human brain. The standard approach to study network properties is based on statistical mechanics which focuses on locally defined quantities on the network's vertices and edges. Networks codify pairwise relationships between nodes such as correlation, coherence, mutual information etc. by means of a metric distance of choice. The connectivity of the matrix is thus fixed by the threshold.
+The network structure is then studied via statistical methods to quantify node and edge related properties e.g. node degree, modularity, small world etc. (see Figure)  
+%http://d29qn7q9z0j1p6.cloudfront.net/content/roypta/368/1933/5633/F1.large.jpg?width=800&height=600&carousel=1
+
+The wealth of studies linking network models with a range of phenomena as wide as genetic marker, genetic regulatory processes, viral evolution, neural coding, synaptic plasticity, cognition, neurodegenerative disorders and even consciousness, underlie the inescapability of network modeling.  
+Network modeling has became a standard de facto to study the spatial properties of the brain in normal condition and its potential for clinical applications is indubitable, and yet largely untapped. Its versatility makes it applicable to multiple neuroimaging techniques (DTI, fMRI, EEG, MEG) giving important insights on for example, the brain's intrinsic functional connectivity e.g. Resting State Networks and how structural connectivity changes in response to trauma and disease. 
+However, we might be hitting a point of diminishing returns ie. increasingly complicated refinements of network based analysis producing results with limited explanatory power \citep{avena2015network}. 
+\subsection*{Limitations of network model analysis}
+A graph is a system of dyadic relationships and, very importantly, is unable to encode higher order interactions. For example, three nodes in a graph can work as a pacemaker or be simultaneously active and there is nothing in the graph-theoretic formalism that will tell the difference.
+% put figure
+
+Graph theoretical estimation of network properties has produced important insights on brain architecture and its evolutionary relevance. For example, small world networks has been reported across different species -from the C.elegans \citeo{sporns2004small} to the human brain \citep{bassett2006adaptive}- and neuromaging data \citep{stam2004functional}, \citep{smit2008heritability}. 
+Small-worldness tells us that the network dynamic properties are different from those of random or regular networks and somehow in between them -non-random clustering and quasi-random path length- but it is insufficient to understand the link between brain structure and function. Furthermore, small world networks are not unequivocal, there are different classes of small world models that potentially yield different behaviors \citep{amaral2000classes}. The devil is in the details seems to suggest Bassett and Bullmore in a recent work \citep{bassett2016small} that revisits their original findings on small world network in the brain \citep{Bassett:2006}, drawing attention to the distinction between the topology of binary graphs and weighted graphs. 
+
+In network analysis we map the connectivity matrix defined by the pairwise interactions between nodes to a graph. In the case of binary networks (unweighted edges) a threshold is required. The choice of a threshold is often ad-hoc and always problematic because it implies information loss. The election of a threshold imposes a specific metric in which the network topology is embedded. 
+In graph filtration, on the other hand, the threshold is a free parameter which as it varies generates a filtration  where persistent topological features can be analyzed across the embedded networks.
+%("Graph analysis of functional brain networks: practical issues in translational neuroscience".) 
+ 
+\section*{Concept and Methodology}
+The brain is a networked system characterized by a highly coupled non linear dynamics across multiple scales in space and time. A mechanistic understanding of brain function e.g. memory and a satisfactory characterization of the interplay between adaptive processes e.g. aging and pathological malfunction is sorely missing.
+Graph theory provides an intuitive and practical approach to quantitatively study the interactions between brain components. This birds-eye view of  the brain relies, however, on local properties at individual vertices e.g. the edge strength is calculated as a correlation between two vertices. 
+Network analysis methods can only deal with pairwise interactions and are therefore unfit to capture higher order relations. For example, three nodes in a graph can work as a pacemaker or be simultaneously active and there is nothing in the graph-theoretic formalism that will tell the difference (\ref{Figure:triangle}).
+
+The emphasis on high connectivity brain regions and recurrent functional networks such as the Default Mode Network are justified on the premise that network hubs and rich club architecture provide rapid and efficient exchange of information between distant parts. 
+The brain is both integrated and segregated and hubs and modules provide the imprint that support the dialects of this operational principle \citep{friston2011functional}. 
+However, the tendency to focus on strongly connected local regions is a corollary of standard network analyses emphasis on properties of individual vertices e.g. vertex degree \citep{sizemore2016closures}. Not surprisingly, the study of weakly connected areas had receive little attention. The assumption "stronger is better" is being challenged by recent studies that show the topology of weak connections correlate more accurately with intelligent quotients  \citep{santarnecchi2014efficiency}. The role of weak connections and the interplay between weak and strong ones as a protective factor in neurodegeneration is unexplored.
+% Lens
+The grammar to capture higher order relations can be naturally expressed in the language of algebraic topology -an enrichment of networks developed to understand the interplay between strong and weak connections in systems.
+Persistent homology and in particular filtration provides a methodology to look at the system's dynamics using different lens or scales.
+% application experiment
+
+The rational behind this proposal is that network models fails short to produce mechanistic models of normal function and disease. Graphs are built by connecting one pair of elements at a time. The limitation of having exclusively dyadic (or bivariate in statistics jargon) relationships is crucial limitations that is often overlooked \citep{giusti2016two}.
+
+Computational topology allows us to go beyond pairwise connections to study simultaneous connections within an elegant mathematical framework. In particular, the connectomics of the mammalian brain can be studied with persistent homology -a powerful method of computational topology that studies the persistent structure in a data set. 
+Persistent homology uses filtrations to identify the permanent features across networks.
+A filtration F is an embedded sequence of networks $F=\{N_1 \in ... \N_i .... \in \N_k\}$ where $N_i$ is a network generated for threshold i.
+There are different kind of filtrations e.g. Rank clique, Vietoris Rips etc.
+For example, the Vietoris-Rips filtration contains a sequence of networks starting from a totally disconnected network ($N_1$ for the initial threshold) to a full connected (clique) for the k-th threshold $N_k$ network. Technically speaking,  Vietoris-Rips filtration a sequence of simplicial complexes built on a metric space to add topological structure to an otherwise disconnected set of points (Sheehy).
+%Linear-Size Approximations to the Vietoris–Rips. Filtration. Donald R. Sheehy
+
+\section*{Objective}
+
+In this project we try to establish a first principles approach to overcome the above mention limitations in network modeling. The main goal is to  provide a theoretical framework together with a computational toolkit aiming at shortening the distance to mechanistic models of brain normal and pathological behavior (e.g. healthy aging and Alzheimer's disease).
+We leverage from three mathematical domains, unknown to most neuroscience practitioners, and that hold a far-reaching potential to study the brain connectome with causal ambition.
+
+\section*{Implementation}
+% Homeostasis DMN-Task
+The Default mode network (DMN) is a connectivity pattern when the brain is at rest. A number of brain areas show correlated oscillation that correspond to the intrinsic activity of the brain, that is, without a directed input or stimulus. In simply words, the default mode network is the signature of what the brain does when is task-free. The Default Mode Network (DMN), despite some initial criticisms \citep{morcom2007does}, has shed light not only in the intrinsic brain activity in the healthy, brain but also in the spatial pathomechanisms of dementia \citep{Seeley:2009}, \citep{{hafkemeijer2012imaging}.
+The discovery of default mode has compartmentalized the study of brain activity into two separated categories: the task-free resting versus the task engaged. The interplay between the task-activation and task-free mode is poorly understood. 
+%Circuit homeostasis or the compensatory changes on brain network provides the conceptual framework that will explore using novel mathematical techniques (computational topology and network control theory)
+
+We go beyond descriptive statistics with graph theory to offer a mechanistic explanation on how the brain moves between cognitive states.  A crucial point is that both densely connected areas (hubs) and sparsely ones have value in terms of the trajectory that they can cover \citep{gu2015controllability}. For example, the posterior cingulate cortex (PCC) -a subystem of the DMN- is a hub and therefore has a rich repertoire of states that can be easily reached. On the other hand, sparsely connected areas have a much reduced repertoire and yet can play an important role in reaching areas of difficult access. 
+
+\subsection*{Simplical complexes homeostasis}
+Node controlability and degree are strongly correlated, that is, the driver nodes tend to be those with a large number of connections. This may explain why hubs in the DMN are preferentially target in AD. The pathology, by disrupting core areas would be affecting the main driver nodes, reducing the variability of the state repertoire (low variability begets pathology in human physiology  \citep{dekker2000low}).
+However, attacking the hubs causes a large disruption but the pathological cascade of events is more predictable. This is precisely because the highly connected nodes are the most easily controllable. 
+Targeting the sparsely connected ones would apparently cause less damage but the compensatory mechanisms that should be put in place would be far more complicated to establish.
+The main point here is that from the point of view of a pathogenic agent (without assuming any sort of volition or intentionality), targeting sparsely connected areas would be a better strategy than highly connected ones because the former are less contralable and therefore more difficult to counterbalance.
+To study this we can't simply compute the degree of the nodes and classify them between highly and poorly connected as it is done in network analysis. 
+
+We follow a different approach, based on permistent homology, to calculate the persistent structure in the filtration (set of embedded networks). The resulting persistent structures (simplicial complexes) will be of different dimensions and life time. For example, a 2-simplex (triangle) that gets born in step i to die in step j and a 3-simplex (tetrahedron) that gets born also in step i to die  later on in step k and so on.
+To visualize this persistence we will use barcodes and Betti numbers. \footnote{A barcode for a filtration of a simplicial complex depicts persistence intervals of homology classes. Betti numbers provides a ranking of homology groups to detect loops and holes in the network or point cloud data.}
+
+\subsection*{Causal analysis}
+Once we have determined the simpicial complexes we perform causal analysis. We study controllability in the brain borrowing concepts from control theory. Whether a system is controlable is the first question that an engineer is confronted to. A system is controlable, if the system can be driven from any initial state to any desired finite state in a finite time \citep{kalman1959general}.
+%A system is observable if every pair of states is distinguingable and two states are indistinguishable if the outputs in response to the two states are equal for all input sequences \citep{Arbib:1987}.
+Crucially, we study the controllability of the brain, that is, the ability to put the system in a desired state, along a trajectory using the persistent structures (simplicial complexes) rather than nodes. 
+The main hypothesis is that the brain is theoretically controllable, this can be analyzed calculating the eigenvalues of the Gramian matrix. If they are all positive the system is controlable \citep{liu2011controllability}.
+
+However, more interesting than a mathematical assesment of brain controillability is to ask, can the brain be moved to an arbitrary state and if so under which circunstances? This calls to study reliability, that is to say, it is not enough to know that mathematically it is possible to bring back the system to, for example, resting state after performing some task, but how this is achieved. 
+We develop new metrics to investigate which simplicial complexes are the most influential in controlling brain trajectories. Note that this is different from the standard approach in network analysis based on estimating the most important node for network robustness which is essentially the most densely connected one.
+
+\section*{Innovation}
+A mechanistic understanding of brain function and malfunction will necessary require to establish a causal theory of the brain. Candidates for global brain theories are not missing e.g. Friston's Free Energy minimization \citep{friston_free-energy_2010}, von Malsburg's correlation theory \citep{von1994correlation}, Abeles cortinomics \citep{Abeles:1991}, Llinás thalamocortical loop \citep{Llinas:1993}, Tononi's integrated information theory \citep{marshall2016integrated} etc. but the jury is still out on a causal explanation of cognition.
+Neuroimaging reveals only correlations and causality can only be investigated through intervention via stimulation or lesion. And this poses a tremendous challenge in a nonlinear highly coupled system like the brain. Intervention in one area can ripple in very complicated and unpredictable ways.
+
+Computational topology allows us to extend and improve the study of brain network dynamics. Barcodes gives us the persistence of cycles and how these cycles appear and disappear between conditions for example between resting state and task or between the healthy condition and the pathological condition.
+\section*{Risk}
+
+\section*{Consortium}
+The consortium is comprised of n internationally leading teams (GCIEN, X, Y, Z) that bring together all of the required technical expertise for this effort.
+
+The Queen Sofia Foundation (Centre for Research in Neurodegenarative Diseases) located in Madrid, Spain, offers state-of-the-art neuroimaging equipment and expertise in brain degenerative processes in a friendly, dynamic and multidisciplinary environment. It leads the “Proyecto Vallecas” a longitudinal study with over 1,000 healthy elderly volunteers (70-85 yrs; male and female), funded by the Spanish Research Council and private donors, that aims at fostering out understanding of healthy aging and neurodegeneration.
+
+Axon Neuroscience, located in Bratislava (Slovakia) is a clinical-stage biotech company developing disease-modifying immunotherapeutics for Alzheimer's disease and Frontotemporal lobar degeneration. AXON Neuroscience has developed unique animal models that reproduce Alzheimer’s disease and allow for a swift and effective pre-clinical validation of efficacy of new therapeutics and pre-clinical evaluation of diagnostic tools.
+
+KTH or Lund University (Sweden) have expertise in use analytical methods from statistical mechanics, graph theory and control systems theory, implemented in numerical simulations of large-scale neuronal networks. 
+
+
+
+\bibliographystyle{spmpsci}
+\bibliography{C:/workspace/github/bibliography-jgr/bibliojgr}   % name your BibTeX data base
+
+\end{document}
+
+
+
+%%%%%%
+
+The final goal of a theory of brain functioning and mal-functioning will necessary need pass by 
+
+
+since the brain is a nonlinear highly coupled system, the brain is difficult to control via localized intervention. The implications for causality are obvious. If brain lesion is understood as the cornerstone of causality. 
+The goal of a causal theory of the brain seems far reaching, even impossible, however, we can still try to identify which areas of the brain are the most influential in driving changes in brain state trajectories.
+Perform a systematic study of the controllability of the network produced by the weighted adjacency matrix.
+Global controllability: Is the human brain controllable? (Arbib) this is the first question that an engineer asks about a system (can we intervene in the system to produce altered states). The answer is hell yes, psycotropics, antidepressants like fluoxetine (Prozac),  and other drugs for anxiety and other mental disorders prove so.
+ 
+
+
+But we can refine the question, and if we ask, can the brain be moved to an arbitrary state by changing the activity of a single brain region? To answer this question we can calculate the Gramian matrix , where each brain region is a control node. If the eigenvalues are $>0$ the system is theoretically controllable through a single region.
+
+This calls to study reliability (it can be theoretically controlable but reliability is a problem, eigenvalues are too close to 0).
+which areas are the most influencial in controlling brain trajectories? (constraining or facilitating changes in brain state trajectories) To address this we need metrics or diagnostics measures.
+     Average controllability , regions that can steer the system into many different states (precuneus, pcc ...DMN). This is strongly correlated with node degree.
+     Modal  controllability: steer the system to difficult to reach states (areas with low degree, is anticorrelated with weighted degree), sparsely connected areas.
+
+The baseline resting state organization is optimized to allow the brain to move to a large number of easily reachable states (DMN as a generator or facilitator of possibilities) accordingly the vast majority of functions performed by the brain are easily reachable from the DM state. The DM is a pluripotent "ground state" which can move the brain into many task-based activation profiles (excited states). Moreover, the default mode is the state to which the brain relaxes back after the task has been performed.
+
+
+  
+
+
+
+
+
+
+ 
+
+Driver nodes is determined mainly by the network’s degree distribution. Sparse inhomogeneous networks, which emerge in many real complex systems, are the most difficult to control, but that dense and homogeneous networks can be controlled using a few driver nodes.
+
+
+%The topology of weak connections correlate more accurately with intelligent quotients (YS disease protector?) than the topology of strong connections.
+%Santarnecchi ( IQ study: "Under the assumption that "stronger is better", the exploration of brain properties has generally focused on the connectivity patterns of the most strongly correlated regions, whereas the role of weaker brain connections has remained obscure for years, highlight the importance of both strong and weak connections in determining the functional architecture responsible for human intelligence variability.")
+
+
+
+
+
+Move beyond considering exclusively pairwise interactions to capturing higher order relations, concepts naturally expressed in the language of  algebraic topology -an enrichment of networks developed to understand the interplay between strong and weak connections in systems (mesoscopic structures, loop like paths).
+
+
+
+Principled examination of multi-node routes within larger connection patterns that are not accessible to network analysis methods that exclusively consider pairwise interactions between nodes.
+
+
+
+
+
+
+Therefore, it is often useful to classify networks using multiple taxonomies, each providing a different lens into the characteristics of the system.
+
+%Classification of weighted networks through mesoscale homological features
